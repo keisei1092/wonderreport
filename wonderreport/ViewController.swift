@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import YouTubeiOSPlayerHelper
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var player: YTPlayerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        player.delegate = self
+        let v: [String: Any] = ["playsinline": 1]
+        player.load(withVideoId: "jrgO_9ey53M", playerVars: v)
     }
-
 
 }
 
+// MARK: - YTPlayerViewDelegate
+
+extension ViewController: YTPlayerViewDelegate {
+
+	func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+		playerView.playVideo()
+	}
+    
+}
