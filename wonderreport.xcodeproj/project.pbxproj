@@ -9,9 +9,17 @@
 /* Begin PBXBuildFile section */
 		F3BCEBED204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBEC204628250002C6F7 /* YouTubeiOSPlayerHelper.framework */; };
 		F3BCEBEE204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBEC204628250002C6F7 /* YouTubeiOSPlayerHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3BCEBF520462ECA0002C6F7 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBF120462ECA0002C6F7 /* TwitterKit.framework */; };
+		F3BCEBF620462ECA0002C6F7 /* TwitterKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBF120462ECA0002C6F7 /* TwitterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3BCEBF920462FB90002C6F7 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBF020462ECA0002C6F7 /* TwitterCore.framework */; };
+		F3BCEBFE204630190002C6F7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEBFD204630190002C6F7 /* Config.swift */; };
+		F3BCEC00204631F10002C6F7 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBFF204631F10002C6F7 /* SafariServices.framework */; };
+		F3BCEC02204632150002C6F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BCEC01204632150002C6F7 /* Main.storyboard */; };
+		F3BCEC04204632DB0002C6F7 /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC03204632DB0002C6F7 /* AuthenticateViewController.swift */; };
+		F3BCEC06204636BF0002C6F7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */; };
 		F3F688E12044F54F0082E57D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F688E02044F54F0082E57D /* AppDelegate.swift */; };
 		F3F688E32044F54F0082E57D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F688E22044F54F0082E57D /* ViewController.swift */; };
-		F3F688E62044F54F0082E57D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F688E42044F54F0082E57D /* Main.storyboard */; };
+		F3F688E62044F54F0082E57D /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F688E42044F54F0082E57D /* ViewController.storyboard */; };
 		F3F688E82044F54F0082E57D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F688E72044F54F0082E57D /* Assets.xcassets */; };
 		F3F688EB2044F54F0082E57D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F688E92044F54F0082E57D /* LaunchScreen.storyboard */; };
 		F3F688F62044F54F0082E57D /* wonderreportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F688F52044F54F0082E57D /* wonderreportTests.swift */; };
@@ -43,6 +51,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F3BCEBEE204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */,
+				F3BCEBF620462ECA0002C6F7 /* TwitterKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,10 +61,19 @@
 /* Begin PBXFileReference section */
 		F3BCEBEA204628060002C6F7 /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubeiOSPlayerHelper.framework; path = Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		F3BCEBEC204628250002C6F7 /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubeiOSPlayerHelper.framework; path = Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
+		F3BCEBF020462ECA0002C6F7 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Carthage/Build/iOS/TwitterCore.framework; sourceTree = "<group>"; };
+		F3BCEBF120462ECA0002C6F7 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterKit.framework; path = Carthage/Build/iOS/TwitterKit.framework; sourceTree = "<group>"; };
+		F3BCEBF220462ECA0002C6F7 /* TwitterShareExtensionUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterShareExtensionUI.framework; path = Carthage/Build/iOS/TwitterShareExtensionUI.framework; sourceTree = "<group>"; };
+		F3BCEBFA20462FCF0002C6F7 /* wonderreport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wonderreport-Bridging-Header.h"; sourceTree = "<group>"; };
+		F3BCEBFD204630190002C6F7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F3BCEBFF204631F10002C6F7 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		F3BCEC01204632150002C6F7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F3BCEC03204632DB0002C6F7 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
+		F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F3F688DD2044F54F0082E57D /* wonderreport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wonderreport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F688E02044F54F0082E57D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3F688E22044F54F0082E57D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F3F688E52044F54F0082E57D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3F688E52044F54F0082E57D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewController.storyboard; sourceTree = "<group>"; };
 		F3F688E72044F54F0082E57D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3F688EA2044F54F0082E57D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3F688EC2044F54F0082E57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BCEC00204631F10002C6F7 /* SafariServices.framework in Frameworks */,
 				F3BCEBED204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Frameworks */,
+				F3BCEBF520462ECA0002C6F7 /* TwitterKit.framework in Frameworks */,
+				F3BCEBF920462FB90002C6F7 /* TwitterCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +117,7 @@
 		F3BCEBE9204628060002C6F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3BCEBFF204631F10002C6F7 /* SafariServices.framework */,
 				F3BCEBEA204628060002C6F7 /* YouTubeiOSPlayerHelper.framework */,
 			);
 			name = Frameworks;
@@ -104,6 +126,9 @@
 		F3F688D42044F54F0082E57D = {
 			isa = PBXGroup;
 			children = (
+				F3BCEBF020462ECA0002C6F7 /* TwitterCore.framework */,
+				F3BCEBF120462ECA0002C6F7 /* TwitterKit.framework */,
+				F3BCEBF220462ECA0002C6F7 /* TwitterShareExtensionUI.framework */,
 				F3BCEBEC204628250002C6F7 /* YouTubeiOSPlayerHelper.framework */,
 				F3F688DF2044F54F0082E57D /* wonderreport */,
 				F3F688F42044F54F0082E57D /* wonderreportTests */,
@@ -128,10 +153,15 @@
 			children = (
 				F3F688E02044F54F0082E57D /* AppDelegate.swift */,
 				F3F688E22044F54F0082E57D /* ViewController.swift */,
-				F3F688E42044F54F0082E57D /* Main.storyboard */,
+				F3F688E42044F54F0082E57D /* ViewController.storyboard */,
 				F3F688E72044F54F0082E57D /* Assets.xcassets */,
 				F3F688E92044F54F0082E57D /* LaunchScreen.storyboard */,
 				F3F688EC2044F54F0082E57D /* Info.plist */,
+				F3BCEBFA20462FCF0002C6F7 /* wonderreport-Bridging-Header.h */,
+				F3BCEBFD204630190002C6F7 /* Config.swift */,
+				F3BCEC01204632150002C6F7 /* Main.storyboard */,
+				F3BCEC03204632DB0002C6F7 /* AuthenticateViewController.swift */,
+				F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */,
 			);
 			path = wonderreport;
 			sourceTree = "<group>";
@@ -224,6 +254,7 @@
 				TargetAttributes = {
 					F3F688DC2044F54F0082E57D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					F3F688F02044F54F0082E57D = {
@@ -265,7 +296,8 @@
 			files = (
 				F3F688EB2044F54F0082E57D /* LaunchScreen.storyboard in Resources */,
 				F3F688E82044F54F0082E57D /* Assets.xcassets in Resources */,
-				F3F688E62044F54F0082E57D /* Main.storyboard in Resources */,
+				F3F688E62044F54F0082E57D /* ViewController.storyboard in Resources */,
+				F3BCEC02204632150002C6F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +325,9 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TwitterShareExtensionUI.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -311,6 +346,9 @@
 			files = (
 				F3F688E32044F54F0082E57D /* ViewController.swift in Sources */,
 				F3F688E12044F54F0082E57D /* AppDelegate.swift in Sources */,
+				F3BCEC04204632DB0002C6F7 /* AuthenticateViewController.swift in Sources */,
+				F3BCEC06204636BF0002C6F7 /* UIViewController+Extension.swift in Sources */,
+				F3BCEBFE204630190002C6F7 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,12 +384,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F3F688E42044F54F0082E57D /* Main.storyboard */ = {
+		F3F688E42044F54F0082E57D /* ViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F3F688E52044F54F0082E57D /* Base */,
 			);
-			name = Main.storyboard;
+			name = ViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		F3F688E92044F54F0082E57D /* LaunchScreen.storyboard */ = {
@@ -476,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZLP777QDS4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -486,6 +525,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miraitoarumachi.wonderreport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wonderreport/wonderreport-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -495,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZLP777QDS4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -505,6 +547,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miraitoarumachi.wonderreport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wonderreport/wonderreport-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
