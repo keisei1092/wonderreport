@@ -9,7 +9,7 @@
 import UIKit
 import YouTubeiOSPlayerHelper
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     @IBOutlet weak var player: YTPlayerView!
     

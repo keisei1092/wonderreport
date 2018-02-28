@@ -17,6 +17,15 @@
 		F3BCEC02204632150002C6F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BCEC01204632150002C6F7 /* Main.storyboard */; };
 		F3BCEC04204632DB0002C6F7 /* AuthenticateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC03204632DB0002C6F7 /* AuthenticateViewController.swift */; };
 		F3BCEC06204636BF0002C6F7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */; };
+		F3BCEC08204671910002C6F7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC07204671910002C6F7 /* ViewModel.swift */; };
+		F3BCEC0A204671FA0002C6F7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEC09204671FA0002C6F7 /* RxSwift.framework */; };
+		F3BCEC0B204671FA0002C6F7 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEC09204671FA0002C6F7 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3BCEC0D204672000002C6F7 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEC0C204672000002C6F7 /* RxCocoa.framework */; };
+		F3BCEC0E204672000002C6F7 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEC0C204672000002C6F7 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3BCEC102046740A0002C6F7 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC0F2046740A0002C6F7 /* BaseViewModel.swift */; };
+		F3BCEC12204674350002C6F7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC11204674350002C6F7 /* BaseViewController.swift */; };
+		F3BCEC14204674B20002C6F7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC13204674B20002C6F7 /* BaseModel.swift */; };
+		F3BCEC16204674CD0002C6F7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BCEC15204674CD0002C6F7 /* Model.swift */; };
 		F3F688E12044F54F0082E57D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F688E02044F54F0082E57D /* AppDelegate.swift */; };
 		F3F688E32044F54F0082E57D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F688E22044F54F0082E57D /* ViewController.swift */; };
 		F3F688E62044F54F0082E57D /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3F688E42044F54F0082E57D /* ViewController.storyboard */; };
@@ -50,8 +59,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F3BCEC0E204672000002C6F7 /* RxCocoa.framework in Embed Frameworks */,
 				F3BCEBEE204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */,
 				F3BCEBF620462ECA0002C6F7 /* TwitterKit.framework in Embed Frameworks */,
+				F3BCEC0B204671FA0002C6F7 /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +81,13 @@
 		F3BCEC01204632150002C6F7 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F3BCEC03204632DB0002C6F7 /* AuthenticateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateViewController.swift; sourceTree = "<group>"; };
 		F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F3BCEC07204671910002C6F7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F3BCEC09204671FA0002C6F7 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F3BCEC0C204672000002C6F7 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		F3BCEC0F2046740A0002C6F7 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		F3BCEC11204674350002C6F7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F3BCEC13204674B20002C6F7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		F3BCEC15204674CD0002C6F7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F3F688DD2044F54F0082E57D /* wonderreport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wonderreport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F688E02044F54F0082E57D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3F688E22044F54F0082E57D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BCEC0D204672000002C6F7 /* RxCocoa.framework in Frameworks */,
+				F3BCEC0A204671FA0002C6F7 /* RxSwift.framework in Frameworks */,
 				F3BCEC00204631F10002C6F7 /* SafariServices.framework in Frameworks */,
 				F3BCEBED204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Frameworks */,
 				F3BCEBF520462ECA0002C6F7 /* TwitterKit.framework in Frameworks */,
@@ -126,6 +146,8 @@
 		F3F688D42044F54F0082E57D = {
 			isa = PBXGroup;
 			children = (
+				F3BCEC0C204672000002C6F7 /* RxCocoa.framework */,
+				F3BCEC09204671FA0002C6F7 /* RxSwift.framework */,
 				F3BCEBF020462ECA0002C6F7 /* TwitterCore.framework */,
 				F3BCEBF120462ECA0002C6F7 /* TwitterKit.framework */,
 				F3BCEBF220462ECA0002C6F7 /* TwitterShareExtensionUI.framework */,
@@ -162,6 +184,11 @@
 				F3BCEC01204632150002C6F7 /* Main.storyboard */,
 				F3BCEC03204632DB0002C6F7 /* AuthenticateViewController.swift */,
 				F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */,
+				F3BCEC07204671910002C6F7 /* ViewModel.swift */,
+				F3BCEC0F2046740A0002C6F7 /* BaseViewModel.swift */,
+				F3BCEC11204674350002C6F7 /* BaseViewController.swift */,
+				F3BCEC13204674B20002C6F7 /* BaseModel.swift */,
+				F3BCEC15204674CD0002C6F7 /* Model.swift */,
 			);
 			path = wonderreport;
 			sourceTree = "<group>";
@@ -328,6 +355,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/TwitterCore.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TwitterKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TwitterShareExtensionUI.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -344,10 +373,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3BCEC14204674B20002C6F7 /* BaseModel.swift in Sources */,
 				F3F688E32044F54F0082E57D /* ViewController.swift in Sources */,
 				F3F688E12044F54F0082E57D /* AppDelegate.swift in Sources */,
 				F3BCEC04204632DB0002C6F7 /* AuthenticateViewController.swift in Sources */,
+				F3BCEC102046740A0002C6F7 /* BaseViewModel.swift in Sources */,
+				F3BCEC16204674CD0002C6F7 /* Model.swift in Sources */,
 				F3BCEC06204636BF0002C6F7 /* UIViewController+Extension.swift in Sources */,
+				F3BCEC12204674350002C6F7 /* BaseViewController.swift in Sources */,
+				F3BCEC08204671910002C6F7 /* ViewModel.swift in Sources */,
 				F3BCEBFE204630190002C6F7 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
