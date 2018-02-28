@@ -19,21 +19,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="M95-iT-Yhy" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBW-Lg-KSu">
+                                <rect key="frame" x="0.0" y="579" width="375" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqj-7u-koe">
+                                        <rect key="frame" x="166" y="34" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="CeL-RK-CFU"/>
+                                    <constraint firstItem="qqj-7u-koe" firstAttribute="centerX" secondItem="VBW-Lg-KSu" secondAttribute="centerX" id="KXS-MZ-SJV"/>
+                                    <constraint firstItem="qqj-7u-koe" firstAttribute="centerY" secondItem="VBW-Lg-KSu" secondAttribute="centerY" id="k5g-VH-g28"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M95-iT-Yhy" secondAttribute="trailing" id="11W-OA-D23"/>
                             <constraint firstItem="M95-iT-Yhy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9ZN-yn-lOL"/>
+                            <constraint firstItem="VBW-Lg-KSu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K7R-Va-bDu"/>
                             <constraint firstItem="M95-iT-Yhy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N1r-1g-YBg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="M95-iT-Yhy" secondAttribute="bottom" id="yWu-T9-n7Q"/>
+                            <constraint firstItem="VBW-Lg-KSu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bH4-qq-ztd"/>
+                            <constraint firstItem="VBW-Lg-KSu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sMf-wk-bEX"/>
+                            <constraint firstItem="VBW-Lg-KSu" firstAttribute="top" secondItem="M95-iT-Yhy" secondAttribute="bottom" id="vZN-ew-kkT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="player" destination="M95-iT-Yhy" id="IE6-bb-rLu"/>
+                        <outlet property="text" destination="qqj-7u-koe" id="Ud8-ve-tIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

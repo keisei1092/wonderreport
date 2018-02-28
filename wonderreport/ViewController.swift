@@ -11,14 +11,17 @@ import YouTubeiOSPlayerHelper
 
 class ViewController: BaseViewController {
 
+	private var viewModel: ViewModel?
+
     @IBOutlet weak var player: YTPlayerView!
-    
+	@IBOutlet weak var text: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         player.delegate = self
-        let v: [String: Any] = ["playsinline": 1]
-        player.load(withVideoId: "jrgO_9ey53M", playerVars: v)
+
+		viewModel = ViewModel(player: player, text: text.rx.text)
     }
 
 }
