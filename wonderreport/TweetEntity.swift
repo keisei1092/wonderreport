@@ -88,7 +88,7 @@ struct UserEntity: Mappable {
 	mutating func mapping(map: Map) {
 		screenName <- map["screen_name"]
 		profileImageURLString <- map["profile_image_url"]
-		print(profileImageURLString)
+		print(profileImageURLString ?? "")
 	}
 
 }
