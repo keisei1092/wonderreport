@@ -12,7 +12,9 @@ import RxSwift
 class Model: BaseModel {
 
 	let url = Variable<URL?>(nil)
-	let text = Variable<String?>(nil)
+	let screenName = Variable<String?>(nil)
+	let createdAt = Variable<String?>(nil)
+	let profileImageURL = Variable<URL?>(nil)
 
 	override init() {
 		super.init()
@@ -39,11 +41,20 @@ class Model: BaseModel {
 			}
 
 			let tweets = TweetsEntity(JSONString: jsonString)
+			print(tweets ?? "")
+
 			let url = tweets?.statuses?.first?.entities?.firstExpandedURL
 			self?.url.value = url
-			let text = tweets?.statuses?.first?.text
-			self?.text.value = text
-			print("url:", url ?? "", "text: \(text ?? "")")
+
+			let screenName = tweets?.statuses?.first?.user?.screenName
+			self?.screenName.value = screenName
+
+			if let createdAt = tweets?.statuses?.first?.createdAt {
+				self?.createdAt.value = Date().offset(from: createdAt)
+			}
+
+			let profileImageURL = tweets?.statuses?.first?.user?.profileImageURL
+			self?.profileImageURL.value =  profileImageURL
 		})
 	}
 

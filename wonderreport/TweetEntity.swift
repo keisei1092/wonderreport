@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct TweetsEntity: Mappable {
+struct TweetsEntity: Mappable, CustomStringConvertible {
 
 	var statuses: [StatusEntity]?
 
@@ -19,18 +19,32 @@ struct TweetsEntity: Mappable {
 		statuses <- map["statuses"]
 	}
 
+	var description: String {
+		get {
+			return "TweetsEntity count: \(statuses?.count ?? 0)"
+		}
+	}
+
 }
 
 struct StatusEntity: Mappable {
 
 	var entities: EntitiesEntity?
 	var text: String?
+	var user: UserEntity?
+	var createdAt: Date?
 
 	init?(map: Map) { }
 
 	mutating func mapping(map: Map) {
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss ZZZZZ yyyy"
+		let dateTransform = DateFormatterTransform(dateFormatter: dateFormatter)
+
 		entities <- map["entities"]
 		text <- map["text"]
+		user <- map["user"]
+		createdAt <- (map["created_at"], dateTransform)
 	}
 
 }
@@ -53,6 +67,28 @@ struct EntitiesEntity: Mappable {
 
 	mutating func mapping(map: Map) {
 		urls <- map["urls"]
+	}
+
+}
+
+struct UserEntity: Mappable {
+
+	var screenName: String?
+	var profileImageURLString: String?
+
+	var profileImageURL: URL? {
+		get {
+			guard let string = profileImageURLString else { return nil }
+			return URL(string: string)
+		}
+	}
+
+	init?(map: Map) { }
+
+	mutating func mapping(map: Map) {
+		screenName <- map["screen_name"]
+		profileImageURLString <- map["profile_image_url"]
+		print(profileImageURLString)
 	}
 
 }

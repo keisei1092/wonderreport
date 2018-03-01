@@ -12,6 +12,9 @@
 		F3255DC92046E98A00D1F7B6 /* TweetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DC82046E98A00D1F7B6 /* TweetEntity.swift */; };
 		F3255DCB2046EF3100D1F7B6 /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DCA2046EF3100D1F7B6 /* ObservableType+Extension.swift */; };
 		F3255DCD2046F04100D1F7B6 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DCC2046F04100D1F7B6 /* URL+Extension.swift */; };
+		F3255DD420477C0100D1F7B6 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DD320477C0100D1F7B6 /* Date+Extension.swift */; };
+		F3255DD620477F1D00D1F7B6 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3255DD520477F1C00D1F7B6 /* SDWebImage.framework */; };
+		F3255DD720477F1D00D1F7B6 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3255DD520477F1C00D1F7B6 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3BCEBED204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBEC204628250002C6F7 /* YouTubeiOSPlayerHelper.framework */; };
 		F3BCEBEE204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBEC204628250002C6F7 /* YouTubeiOSPlayerHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3BCEBF520462ECA0002C6F7 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BCEBF120462ECA0002C6F7 /* TwitterKit.framework */; };
@@ -68,6 +71,7 @@
 				F3BCEBEE204628250002C6F7 /* YouTubeiOSPlayerHelper.framework in Embed Frameworks */,
 				F3255DC72046E96400D1F7B6 /* ObjectMapper.framework in Embed Frameworks */,
 				F3BCEBF620462ECA0002C6F7 /* TwitterKit.framework in Embed Frameworks */,
+				F3255DD720477F1D00D1F7B6 /* SDWebImage.framework in Embed Frameworks */,
 				F3BCEC0B204671FA0002C6F7 /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -80,6 +84,8 @@
 		F3255DC82046E98A00D1F7B6 /* TweetEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetEntity.swift; sourceTree = "<group>"; };
 		F3255DCA2046EF3100D1F7B6 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		F3255DCC2046F04100D1F7B6 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		F3255DD320477C0100D1F7B6 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		F3255DD520477F1C00D1F7B6 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		F3BCEBEA204628060002C6F7 /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubeiOSPlayerHelper.framework; path = Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		F3BCEBEC204628250002C6F7 /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubeiOSPlayerHelper.framework; path = Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		F3BCEBF020462ECA0002C6F7 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwitterCore.framework; path = Carthage/Build/iOS/TwitterCore.framework; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3255DD620477F1D00D1F7B6 /* SDWebImage.framework in Frameworks */,
 				F3BCEC0D204672000002C6F7 /* RxCocoa.framework in Frameworks */,
 				F3BCEC0A204671FA0002C6F7 /* RxSwift.framework in Frameworks */,
 				F3BCEC00204631F10002C6F7 /* SafariServices.framework in Frameworks */,
@@ -145,6 +152,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3255DCE2047736D00D1F7B6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3255DCA2046EF3100D1F7B6 /* ObservableType+Extension.swift */,
+				F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */,
+				F3255DCC2046F04100D1F7B6 /* URL+Extension.swift */,
+				F3255DD320477C0100D1F7B6 /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F3BCEBE9204628060002C6F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +175,7 @@
 		F3F688D42044F54F0082E57D = {
 			isa = PBXGroup;
 			children = (
+				F3255DD520477F1C00D1F7B6 /* SDWebImage.framework */,
 				F3255DC52046E96400D1F7B6 /* ObjectMapper.framework */,
 				F3BCEC0C204672000002C6F7 /* RxCocoa.framework */,
 				F3BCEC09204671FA0002C6F7 /* RxSwift.framework */,
@@ -185,6 +204,7 @@
 		F3F688DF2044F54F0082E57D /* wonderreport */ = {
 			isa = PBXGroup;
 			children = (
+				F3255DCE2047736D00D1F7B6 /* Extensions */,
 				F3F688E02044F54F0082E57D /* AppDelegate.swift */,
 				F3F688E22044F54F0082E57D /* ViewController.swift */,
 				F3F688E42044F54F0082E57D /* ViewController.storyboard */,
@@ -195,15 +215,12 @@
 				F3BCEBFD204630190002C6F7 /* Config.swift */,
 				F3BCEC01204632150002C6F7 /* Main.storyboard */,
 				F3BCEC03204632DB0002C6F7 /* AuthenticateViewController.swift */,
-				F3BCEC05204636BF0002C6F7 /* UIViewController+Extension.swift */,
 				F3BCEC07204671910002C6F7 /* ViewModel.swift */,
 				F3BCEC0F2046740A0002C6F7 /* BaseViewModel.swift */,
 				F3BCEC11204674350002C6F7 /* BaseViewController.swift */,
 				F3BCEC13204674B20002C6F7 /* BaseModel.swift */,
 				F3BCEC15204674CD0002C6F7 /* Model.swift */,
 				F3255DC82046E98A00D1F7B6 /* TweetEntity.swift */,
-				F3255DCA2046EF3100D1F7B6 /* ObservableType+Extension.swift */,
-				F3255DCC2046F04100D1F7B6 /* URL+Extension.swift */,
 			);
 			path = wonderreport;
 			sourceTree = "<group>";
@@ -373,6 +390,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -400,6 +418,7 @@
 				F3255DCD2046F04100D1F7B6 /* URL+Extension.swift in Sources */,
 				F3BCEC06204636BF0002C6F7 /* UIViewController+Extension.swift in Sources */,
 				F3BCEC12204674350002C6F7 /* BaseViewController.swift in Sources */,
+				F3255DD420477C0100D1F7B6 /* Date+Extension.swift in Sources */,
 				F3BCEC08204671910002C6F7 /* ViewModel.swift in Sources */,
 				F3BCEBFE204630190002C6F7 /* Config.swift in Sources */,
 			);

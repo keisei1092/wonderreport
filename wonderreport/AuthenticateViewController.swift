@@ -10,8 +10,15 @@ import UIKit
 import TwitterKit
 
 class AuthenticateViewController: UIViewController {
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		// Twitterのセッションが存在すれば読み込む
+		guard !TWTRTwitter.sharedInstance().sessionStore.hasLoggedInUsers() else {
+			proceedToNextVC()
+			return
+		}
 
 		let logInButton = TWTRLogInButton(logInCompletion: { [weak self] session, error in
 			guard let session = session else {
@@ -25,13 +32,21 @@ class AuthenticateViewController: UIViewController {
 
 			print("signed in as \(session.userName)")
 
-			// メイン画面へ遷移
-			let vc = ViewController.instantiateFromStoryboard()
-			vc.modalTransitionStyle = .crossDissolve
-			self?.present(vc, animated: true)
+			// Twitterのセッションを保存
+			TWTRTwitter.sharedInstance().sessionStore.save(session, completion: { _, _ in })
+
+			self?.proceedToNextVC()
 		})
 
 		logInButton.center = view.center
 		view.addSubview(logInButton)
 	}
+
+	/// メイン画面へ遷移
+	func proceedToNextVC() {
+		let vc = ViewController.instantiateFromStoryboard()
+		vc.modalTransitionStyle = .crossDissolve
+		present(vc, animated: true)
+	}
+
 }

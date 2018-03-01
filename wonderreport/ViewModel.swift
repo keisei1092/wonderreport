@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import YouTubeiOSPlayerHelper
+import SDWebImage
 
 class ViewModel: BaseViewModel {
 
@@ -17,12 +18,15 @@ class ViewModel: BaseViewModel {
 
 	init(
 		player: YTPlayerView,
-		text: Binder<String?>
+		icon: UIImageView,
+		screenName: Binder<String?>,
+		createdAt: Binder<String?>
 	) {
 		super.init()
 
 		model.url.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
+			.debug()
 			.drive(onNext: { url in
 				guard let id = url.queryParameters?["v"] else { return }
 				let v: [String: Any] = ["playsinline": 1]
@@ -30,9 +34,22 @@ class ViewModel: BaseViewModel {
 				print("player load: \(id)")
 			}).disposed(by: disposeBag)
 
-		model.text.asObservable().unwrap()
+		model.createdAt.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
-			.drive(text)
+			.drive(createdAt)
+			.disposed(by: disposeBag)
+
+		model.screenName.asObservable().unwrap()
+			.asDriver(onErrorDriveWith: Driver.empty())
+			.drive(screenName)
+			.disposed(by: disposeBag)
+
+		model.profileImageURL.asObservable().unwrap()
+			.asDriver(onErrorDriveWith: Driver.empty())
+			.drive(onNext: { url in
+				icon.image = nil
+				icon.sd_setImage(with: url)
+			})
 			.disposed(by: disposeBag)
 	}
 	
