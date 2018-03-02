@@ -26,9 +26,16 @@ class ViewModel: BaseViewModel {
 
 		model.url.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
-			.debug()
 			.drive(onNext: { url in
-				guard let id = url.queryParameters?["v"] else { return }
+				// URLには youtu.be/xxxx と youtube.com/watch?v=xxxx のタイプがある
+				guard
+					let id = url.host == "youtube.com" ? url.queryParameters?["v"]
+						   : url.host == "youtu.be" ? url.lastPathComponent
+					       : nil
+				else {
+					assertionFailure("invalid URL pattern: \(url)")
+					return
+				}
 				let v: [String: Any] = ["playsinline": 1]
 				player.load(withVideoId: id, playerVars: v)
 				print("player load: \(id)")

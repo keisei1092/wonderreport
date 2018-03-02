@@ -22,7 +22,7 @@ class Model: BaseModel {
 		// Twitterで #wonderreport と検索して、結果の配列をViewModelに渡す
 		let client = TWTRAPIClient()
 		let statusesSearchEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
-		let params: [String: Any] = ["q": "#wonderreport"]
+		let params: [String: Any] = ["q": "#wonderreport -RT"]
 		var clientError: NSError?
 		let request = client.urlRequest(withMethod: "GET",
 										urlString: statusesSearchEndpoint,
@@ -40,7 +40,7 @@ class Model: BaseModel {
 				return
 			}
 
-			let tweets = TweetsEntity(JSONString: jsonString)
+			let tweets = Tweets(JSONString: jsonString)
 			print(tweets ?? "")
 
 			let url = tweets?.statuses?.first?.entities?.firstExpandedURL

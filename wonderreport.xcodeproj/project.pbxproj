@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F3255DC62046E96400D1F7B6 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3255DC52046E96400D1F7B6 /* ObjectMapper.framework */; };
 		F3255DC72046E96400D1F7B6 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3255DC52046E96400D1F7B6 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F3255DC92046E98A00D1F7B6 /* TweetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DC82046E98A00D1F7B6 /* TweetEntity.swift */; };
+		F3255DC92046E98A00D1F7B6 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DC82046E98A00D1F7B6 /* Tweet.swift */; };
 		F3255DCB2046EF3100D1F7B6 /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DCA2046EF3100D1F7B6 /* ObservableType+Extension.swift */; };
 		F3255DCD2046F04100D1F7B6 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DCC2046F04100D1F7B6 /* URL+Extension.swift */; };
 		F3255DD420477C0100D1F7B6 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3255DD320477C0100D1F7B6 /* Date+Extension.swift */; };
@@ -81,7 +81,7 @@
 
 /* Begin PBXFileReference section */
 		F3255DC52046E96400D1F7B6 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		F3255DC82046E98A00D1F7B6 /* TweetEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetEntity.swift; sourceTree = "<group>"; };
+		F3255DC82046E98A00D1F7B6 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		F3255DCA2046EF3100D1F7B6 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		F3255DCC2046F04100D1F7B6 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		F3255DD320477C0100D1F7B6 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 				F3BCEC11204674350002C6F7 /* BaseViewController.swift */,
 				F3BCEC13204674B20002C6F7 /* BaseModel.swift */,
 				F3BCEC15204674CD0002C6F7 /* Model.swift */,
-				F3255DC82046E98A00D1F7B6 /* TweetEntity.swift */,
+				F3255DC82046E98A00D1F7B6 /* Tweet.swift */,
 			);
 			path = wonderreport;
 			sourceTree = "<group>";
@@ -409,7 +409,7 @@
 			files = (
 				F3BCEC14204674B20002C6F7 /* BaseModel.swift in Sources */,
 				F3F688E32044F54F0082E57D /* ViewController.swift in Sources */,
-				F3255DC92046E98A00D1F7B6 /* TweetEntity.swift in Sources */,
+				F3255DC92046E98A00D1F7B6 /* Tweet.swift in Sources */,
 				F3F688E12044F54F0082E57D /* AppDelegate.swift in Sources */,
 				F3255DCB2046EF3100D1F7B6 /* ObservableType+Extension.swift in Sources */,
 				F3BCEC04204632DB0002C6F7 /* AuthenticateViewController.swift in Sources */,

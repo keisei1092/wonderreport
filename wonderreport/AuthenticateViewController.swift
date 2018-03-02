@@ -33,7 +33,9 @@ class AuthenticateViewController: UIViewController {
 			print("signed in as \(session.userName)")
 
 			// Twitterのセッションを保存
-			TWTRTwitter.sharedInstance().sessionStore.save(session, completion: { _, _ in })
+			TWTRTwitter.sharedInstance().sessionStore.save(session, completion: { _, _ in
+				print("session saved!")
+			})
 
 			self?.proceedToNextVC()
 		})

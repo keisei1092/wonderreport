@@ -1,5 +1,5 @@
 //
-//  TweetEntity.swift
+//  Tweet.swift
 //  wonderreport
 //
 //  Created by Keisei Saito on 2018/02/28.
@@ -9,9 +9,9 @@
 import Foundation
 import ObjectMapper
 
-struct TweetsEntity: Mappable, CustomStringConvertible {
+struct Tweets: Mappable, CustomStringConvertible {
 
-	var statuses: [StatusEntity]?
+	var statuses: [Status]?
 
 	init?(map: Map) { }
 
@@ -21,18 +21,23 @@ struct TweetsEntity: Mappable, CustomStringConvertible {
 
 	var description: String {
 		get {
-			return "TweetsEntity count: \(statuses?.count ?? 0)"
+			return "Tweets count: \(statuses?.count ?? 0)"
 		}
 	}
 
 }
 
-struct StatusEntity: Mappable {
+struct Status: Mappable {
 
-	var entities: EntitiesEntity?
+	var entities: Entities?
 	var text: String?
-	var user: UserEntity?
+	var user: User?
+	var retweetedStatus: RetweetedStatus?
 	var createdAt: Date?
+
+	var isRT: Bool {
+		get { return retweetedStatus != nil }
+	}
 
 	init?(map: Map) { }
 
@@ -44,12 +49,25 @@ struct StatusEntity: Mappable {
 		entities <- map["entities"]
 		text <- map["text"]
 		user <- map["user"]
+		retweetedStatus <- map["retweeted_status"]
 		createdAt <- (map["created_at"], dateTransform)
 	}
 
 }
 
-struct EntitiesEntity: Mappable {
+struct RetweetedStatus: Mappable {
+
+	var id: UInt64?
+
+	init?(map: Map) { }
+
+	mutating func mapping(map: Map) {
+		id <- map["id"]
+	}
+
+}
+
+struct Entities: Mappable {
 
 	var urls: [AnyObject]?
 
@@ -71,7 +89,7 @@ struct EntitiesEntity: Mappable {
 
 }
 
-struct UserEntity: Mappable {
+struct User: Mappable {
 
 	var screenName: String?
 	var profileImageURLString: String?
