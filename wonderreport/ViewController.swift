@@ -28,7 +28,8 @@ class ViewController: BaseViewController {
 			player: player,
 			icon: icon,
 			screenName: screenName.rx.text,
-			createdAt: createdAt.rx.text)
+			createdAt: createdAt.rx.text,
+			tap: tap)
     }
 
 }

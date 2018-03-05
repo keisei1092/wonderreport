@@ -22,10 +22,12 @@ class ViewModel: BaseViewModel {
 		player: YTPlayerView,
 		icon: UIImageView,
 		screenName: Binder<String?>,
-		createdAt: Binder<String?>
+		createdAt: Binder<String?>,
+		tap: UIButton
 	) {
 		super.init()
 
+		// URLを受け取った時に再生する
 		model.url.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
 			.drive(onNext: { url in
@@ -43,16 +45,19 @@ class ViewModel: BaseViewModel {
 				print("player load: \(id)")
 			}).disposed(by: disposeBag)
 
+		// 投稿日ラベル
 		model.createdAt.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
 			.drive(createdAt)
 			.disposed(by: disposeBag)
 
+		// スクリーンネームラベル
 		model.screenName.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
 			.drive(screenName)
 			.disposed(by: disposeBag)
 
+		// アイコン
 		model.profileImageURL.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
 			.drive(onNext: { url in
@@ -61,10 +66,16 @@ class ViewModel: BaseViewModel {
 			})
 			.disposed(by: disposeBag)
 
-		playerDidEnd.asObserver().subscribe({ [weak self] _ in
-			self?.model.forward()
-		})
-		.disposed(by: disposeBag)
+		// 画面タップで次へ
+		tap.rx.tap
+			.throttle(2, scheduler: MainScheduler.instance)
+			.subscribe(onNext: { [weak self] in self?.model.forward() })
+			.disposed(by: disposeBag)
+
+		// YouTube動画の再生が終わったら次へ
+		playerDidEnd.asObserver()
+			.subscribe({ [weak self] _ in self?.model.forward() })
+			.disposed(by: disposeBag)
 
 	}
 	
