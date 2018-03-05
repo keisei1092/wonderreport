@@ -16,6 +16,8 @@ class ViewModel: BaseViewModel {
 
 	private let model = Model()
 
+	let playerDidEnd = PublishSubject<Void>()
+
 	init(
 		player: YTPlayerView,
 		icon: UIImageView,
@@ -58,6 +60,12 @@ class ViewModel: BaseViewModel {
 				icon.sd_setImage(with: url)
 			})
 			.disposed(by: disposeBag)
+
+		playerDidEnd.asObserver().subscribe({ [weak self] _ in
+			self?.model.forward()
+		})
+		.disposed(by: disposeBag)
+
 	}
 	
 }

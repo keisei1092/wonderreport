@@ -11,6 +11,9 @@ import RxSwift
 
 class Model: BaseModel {
 
+	private var tweets: Tweets?
+	private var i = 0
+
 	let url = Variable<URL?>(nil)
 	let screenName = Variable<String?>(nil)
 	let createdAt = Variable<String?>(nil)
@@ -43,19 +46,31 @@ class Model: BaseModel {
 			let tweets = Tweets(JSONString: jsonString)
 			print(tweets ?? "")
 
-			let url = tweets?.statuses?.first?.entities?.firstExpandedURL
-			self?.url.value = url
-
-			let screenName = tweets?.statuses?.first?.user?.screenName
-			self?.screenName.value = screenName
-
-			if let createdAt = tweets?.statuses?.first?.createdAt {
-				self?.createdAt.value = Date().offset(from: createdAt)
-			}
-
-			let profileImageURL = tweets?.statuses?.first?.user?.profileImageURL
-			self?.profileImageURL.value =  profileImageURL
+			self?.tweets = tweets
+			self?.load()
 		})
+	}
+
+	/// 次の動画を再生、最後まで来たら最初に戻る
+	func forward() {
+		guard let c = tweets?.statuses?.count else { return }
+		if i == c - 1 { i = 0 } else { i += 1 }
+		load()
+	}
+
+	private func load() {
+		let url = tweets?.statuses?[i].entities?.firstExpandedURL
+		self.url.value = url
+
+		let screenName = tweets?.statuses?[i].user?.screenName
+		self.screenName.value = screenName
+
+		if let createdAt = tweets?.statuses?[i].createdAt {
+			self.createdAt.value = Date().offset(from: createdAt)
+		}
+
+		let profileImageURL = tweets?.statuses?[i].user?.profileImageURL
+		self.profileImageURL.value =  profileImageURL
 	}
 
 }

@@ -40,5 +40,10 @@ extension ViewController: YTPlayerViewDelegate {
 	func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
 		playerView.playVideo()
 	}
+
+	func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
+		guard state == .ended else { return }
+		viewModel?.playerDidEnd.onNext(())
+	}
     
 }
