@@ -31,13 +31,14 @@ class ViewModel: BaseViewModel {
 		model.url.asObservable().unwrap()
 			.asDriver(onErrorDriveWith: Driver.empty())
 			.drive(onNext: { url in
-				// URLには youtu.be/xxxx と youtube.com/watch?v=xxxx のタイプがある
+				// URLには youtu.be/xxxx と (www.)youtube.com/watch?v=xxxx のタイプがある
 				guard
-					let id = url.host == "youtube.com" ? url.queryParameters?["v"]
+					let id = url.host == "youtube.com" || url.host == "www.youtube.com"
+						   ? url.queryParameters?["v"]
 						   : url.host == "youtu.be" ? url.lastPathComponent
 					       : nil
 				else {
-					assertionFailure("invalid URL pattern: \(url)")
+					print("invalid URL pattern: \(url)")
 					return
 				}
 				let v: [String: Any] = ["playsinline": 1]
