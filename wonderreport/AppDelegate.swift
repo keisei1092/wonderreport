@@ -8,12 +8,16 @@
 
 import UIKit
 import TwitterKit
+import ToastSwiftFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+	static var shared: AppDelegate? {
+		return UIApplication.shared.delegate as? AppDelegate
+	}
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		TWTRTwitter.sharedInstance().start(
@@ -52,6 +56,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+	/// トーストを表示
+	func showToast(message: String) {
+		guard let topController = UIApplication.topViewController() else {
+			print("failed to obtain top most viewcontroller")
+			return
+		}
+
+		topController.view?.makeToast(message)
+	}
 
 }
-

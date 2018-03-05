@@ -39,6 +39,7 @@ class ViewModel: BaseViewModel {
 					       : nil
 				else {
 					print("invalid URL pattern: \(url)")
+					AppDelegate.shared?.showToast(message: "不正なURLです")
 					return
 				}
 				let v: [String: Any] = ["playsinline": 1]
